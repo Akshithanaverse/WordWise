@@ -23,8 +23,8 @@ font-family: 'Ubuntu', sans-serif;
 
 @media (prefers-color-scheme: dark), [data-theme="dark"] {
   /* Dark Theme Colors */
-  light: #2e3440;
-  secondary: #3b4252;
+  --light: #2e3440;
+  --secondary: #3b4252;
   --dark: #eceff4;
   --primary-color: #f4978e;
   --secondary-color: #b48ead;
@@ -318,6 +318,7 @@ body.dark .support a {
 .px-1 {
   padding-left: 5px;
   padding-right: 5px;
+  padding-top: 8px;
 }
 
 .px-2 {
@@ -412,10 +413,17 @@ a {
   width: 93%;
 }
 
+/*.text-title {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: bold;
+
+}*/
 .text-title {
   font-family: "Nunito Sans", sans-serif;
   font-weight: bold;
+  margin-top: 50px; 
 }
+
 
 .text-title:hover {
   color: var(--primary-color);
@@ -427,6 +435,7 @@ a {
 
 .display-1 {
   font-size: 22px;
+  margin-top: 50px; 
 }
 
 .display-2 {
@@ -499,6 +508,7 @@ a {
 
 #site-main {
   margin-bottom: 20px;
+  margin-top: 180px;
 }
 
 #posts {
@@ -697,21 +707,27 @@ a {
 .overflow-img {
   max-width: 300px;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: box-shadow 0.3s ease; /* Smooth transition for the shadow */
+  border-radius: 10px; /* Add rounded corners to the container */
 }
 
 .overflow-img img {
   width: 100%;
   height: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for scaling and opacity */
+  border-radius: 10px; /* Add rounded corners to the image */
 }
 
-.overflow-img:hover {
-  transform: scale(1.1);
+.overflow-img:hover img {
+  transform: scale(1.1); /* Scale the image on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Increased shadow for depth */
+  opacity: 0.9; /* Slightly reduce opacity */
 }
 
 .overflow-img a {
-  text-decoration: none;
+  text-decoration: none; /* Remove underline from the link */
 }
+
 
 .collapse.nav-link {
   display: block;
